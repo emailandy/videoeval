@@ -1,0 +1,1474 @@
+{
+  "individual_checks": {
+    "audio_realism_checker": {
+      "has_audio_issues": false,
+      "catastrophic_issue_present": false,
+      "issues_log": []
+    },
+    "av_sync_checker": {
+      "has_sync_issues": false,
+      "catastrophic_issue_present": false,
+      "issues_log": []
+    },
+    "visual_artifact_checker": {
+      "has_visual_issues": true,
+      "catastrophic_issue_present": false,
+      "issues_log": [
+        {
+          "timestamp": "0:07-0:11",
+          "severity": "moderate",
+          "category": "Anatomical",
+          "description": "The woman's hand holding the teacup exhibits elongated, misshapen fingers that blend unnaturally with the cup, indicating an AI generation artifact."
+        }
+      ]
+    },
+    "abcd_agent": {
+      "score_0_to_100": 75,
+      "abcd_features": [
+        {
+          "id": "shorts_production_style",
+          "detected": true,
+          "confidence_score": 0.9,
+          "evaluation": {
+            "technical_quality": {
+              "observed_style": "Studio",
+              "production_elements": [
+                {
+                  "element": "Professional lighting setup",
+                  "type": "Studio",
+                  "timestamp": 0.0,
+                  "confidence": 0.9
+                },
+                {
+                  "element": "Multiple camera angles",
+                  "type": "Studio",
+                  "timestamp": 0.0,
+                  "confidence": 0.85
+                },
+                {
+                  "element": "Perfect focus and exposure",
+                  "type": "Studio",
+                  "timestamp": 0.0,
+                  "confidence": 0.9
+                },
+                {
+                  "element": "Professional audio setup",
+                  "type": "Studio",
+                  "timestamp": 0.0,
+                  "confidence": 0.9
+                }
+              ],
+              "overall_quality": "High-quality professional production with consistent lighting, clear focus, and well-mixed audio throughout the video."
+            },
+            "environment_analysis": {
+              "setting_type": "Mixed (realistic outdoor/indoor and idealized resort)",
+              "control_level": "Highly controlled",
+              "key_elements": [
+                "Initial homestay exterior (0:00-0:01)",
+                "Mountain view from luxurious resort balcony (0:07-0:10)"
+              ],
+              "authenticity_markers": [
+                "The initial homestay setting feels realistic and slightly rustic, enhancing the 'before' scenario.",
+                "The luxurious resort setting at the end is professionally staged and highly idealized to showcase the 'after' scenario."
+              ]
+            },
+            "performance_assessment": {
+              "delivery_style": "Polished and expressive, actors convey surprise, excitement, and contentment.",
+              "scripting_level": "Fully scripted with precise dialogue and reactions.",
+              "authenticity_score": 0.6,
+              "key_moments": [
+                {
+                  "timestamp": 0.0,
+                  "description": "Female actor expresses dismay: 'This is our honeymoon?'",
+                  "style_indicator": "Polished delivery, scripted dialogue"
+                },
+                {
+                  "timestamp": 0.06,
+                  "description": "Both actors show exaggerated excitement upon seeing the phone screen.",
+                  "style_indicator": "Controlled reactions, professional pacing"
+                },
+                {
+                  "timestamp": 0.08,
+                  "description": "Couple relaxes on a luxury balcony, smiling contentedly.",
+                  "style_indicator": "Skilled actors, perfect timing"
+                }
+              ]
+            },
+            "production_markers": {
+              "studio_elements": [
+                {
+                  "type": "Visuals",
+                  "description": "Consistent high-quality lighting and clear cinematography, especially in the final resort scene (0:07-0:10).",
+                  "timestamp": 0.07
+                },
+                {
+                  "type": "Audio",
+                  "description": "Clean, well-balanced audio with clear dialogue and background music.",
+                  "timestamp": 0.0
+                },
+                {
+                  "type": "Performance",
+                  "description": "Professional acting with well-timed reactions and dialogue.",
+                  "timestamp": 0.0
+                }
+              ],
+              "user_gen_elements": []
+            },
+            "overall_assessment": {
+              "primary_style": "Studio",
+              "distinguishing_features": [
+                "Professional camera work and lighting throughout the ad.",
+                "Clearly directed and acted performances.",
+                "Controlled environments, transitioning from a realistic homestay to an aspirational luxury resort.",
+                "High production polish and clear audio quality."
+              ],
+              "production_level": "High production value.",
+              "authenticity_level": "Staged for commercial impact, less raw authenticity."
+            }
+          }
+        },
+        {
+          "id": "shorts_tv_ad_style",
+          "detected": true,
+          "confidence_score": 0.95,
+          "evaluation": {
+            "style_analysis": {
+              "production_quality": {
+                "observed_level": "High production quality, professional and polished.",
+                "tv_ad_elements": [
+                  "Professional studio lighting (0:00-0:10)",
+                  "Perfect exposure control (0:00-0:10)",
+                  "Stable camera movements (0:00-0:10)",
+                  "Clean, controlled framing (0:00-0:10)",
+                  "High production polish (0:00-0:10)"
+                ],
+                "natural_elements": [],
+                "confidence": 0.95
+              },
+              "editing_patterns": {
+                "style_type": "Traditional Commercial",
+                "tv_ad_markers": [
+                  "Professional transitions (0:06-0:07, 0:11-0:12)",
+                  "Perfectly timed cuts (0:00-0:12)",
+                  "Montage-style sequence (0:07-0:10)",
+                  "Beauty shots (0:07-0:10 of the resort and mountain view)"
+                ],
+                "natural_markers": [],
+                "confidence": 0.9
+              },
+              "composition_elements": {
+                "overall_style": "Formal and professional.",
+                "formal_aspects": [
+                  "Formal framing (0:00-0:10)",
+                  "Perfect subject placement (0:00-0:10)",
+                  "Professional depth of field (0:07-0:10)",
+                  "Controlled backgrounds (0:00-0:10)",
+                  "Strategic visual design (0:00-0:10)"
+                ],
+                "casual_aspects": [],
+                "confidence": 0.95
+              }
+            },
+            "timestamps": [
+              {
+                "time": 0.0,
+                "element_type": "Production Quality",
+                "style_indicator": "TV Ad",
+                "description": "Professional lighting and camera work on the actors outside the homestay."
+              },
+              {
+                "time": 0.06,
+                "element_type": "Editing Style",
+                "style_indicator": "TV Ad",
+                "description": "A quick, seamless transition from the homestay scene to the phone screen, implying immediate solution."
+              },
+              {
+                "time": 0.07,
+                "element_type": "Composition",
+                "style_indicator": "TV Ad",
+                "description": "Idealized shot of the couple on a luxurious balcony with a stunning mountain view."
+              },
+              {
+                "time": 0.08,
+                "element_type": "Production Quality",
+                "style_indicator": "TV Ad",
+                "description": "The scenic view and comfortable setting are presented with high production polish, characteristic of a commercial."
+              }
+            ],
+            "key_evidence": {
+              "tv_ad_style": [
+                {
+                  "aspect": "Production Quality",
+                  "evidence": "Consistent professional lighting, stable camera, and clear visuals throughout.",
+                  "impact": "Creates a polished, high-quality, and aspirational feel typically found in TV advertisements."
+                },
+                {
+                  "aspect": "Editing Style",
+                  "evidence": "The quick, precise cuts and smooth transitions, especially the scene change from the homestay to the resort, are characteristic of commercial editing.",
+                  "impact": "Drives a clear narrative quickly and effectively, showcasing a desirable outcome without informal or dynamic short-form edits."
+                },
+                {
+                  "aspect": "Composition",
+                  "evidence": "The framing of the couple and the panoramic mountain view at the end is carefully composed and aesthetically pleasing.",
+                  "impact": "Highlights the aspirational lifestyle and premium experience, aligning with traditional commercial visual storytelling."
+                }
+              ],
+              "natural_style": []
+            },
+            "overall_assessment": {
+              "primary_style": "Traditional TV Ad Style",
+              "style_confidence": 0.95,
+              "distinguishing_features": [
+                "High production polish with professional lighting and cinematography.",
+                "Smooth, precise editing and transitions.",
+                "Formal and aspirational visual composition.",
+                "Clear problem-solution narrative typical of commercials."
+              ]
+            }
+          }
+        },
+        {
+          "id": "shorts_sfv_adaptation_low",
+          "detected": false,
+          "confidence_score": 0.85,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video exhibits strong commercial characteristics, including professional production quality, skilled acting, and a polished narrative, which detract from a native short-form feel. It lacks the raw, authentic, or unscripted elements common in user-generated content.",
+            "evidence": [
+              {
+                "aspect": "visual",
+                "native_elements": [],
+                "commercial_elements": [
+                  "Steady camera work (0:00-0:10)",
+                  "Professional lighting (0:00-0:10)",
+                  "Polished editing (0:00-0:10)",
+                  "Controlled settings (homestay exterior, luxury resort balcony) (0:00-0:10)",
+                  "Perfect framing (0:00-0:10)",
+                  "High production quality (0:00-0:10)"
+                ],
+                "dominant_style": "commercial",
+                "timestamps": [
+                  0.0,
+                  0.07
+                ]
+              },
+              {
+                "aspect": "audio",
+                "native_elements": [],
+                "commercial_elements": [
+                  "Studio sound (0:00-0:10)",
+                  "Clean audio mix (0:00-0:10)",
+                  "Professional voices (actors' dialogue) (0:00-0:07)",
+                  "Scripted delivery (0:00-0:07)",
+                  "Perfect balance (0:00-0:10)"
+                ],
+                "dominant_style": "commercial",
+                "timestamps": [
+                  0.0,
+                  0.06
+                ]
+              },
+              {
+                "aspect": "presentation",
+                "native_elements": [],
+                "commercial_elements": [
+                  "Formal delivery (actors' performance) (0:00-0:07)",
+                  "Marketing language ('Deals! Right now!', 'We don't need to compromise at all!') (0:04-0:07)",
+                  "Perfect timing (dialogue and reactions) (0:00-0:07)",
+                  "Scripted speech (0:00-0:07)",
+                  "Controlled reactions (exaggerated surprise, then contentment) (0:03-0:07)"
+                ],
+                "dominant_style": "commercial",
+                "timestamps": [
+                  0.0,
+                  0.03,
+                  0.06
+                ]
+              },
+              {
+                "aspect": "content",
+                "native_elements": [],
+                "commercial_elements": [
+                  "Brand messaging (Agoda as the solution) (0:06-0:10)",
+                  "Planned sequences (problem-solution narrative) (0:00-0:10)",
+                  "Staged moments (honeymoon disappointment, then luxury) (0:00-0:10)",
+                  "TV commercial style (0:00-0:10)",
+                  "Professional flow (0:00-0:10)"
+                ],
+                "dominant_style": "commercial",
+                "timestamps": [
+                  0.0,
+                  0.07
+                ]
+              }
+            ],
+            "strengths": [],
+            "weaknesses": [
+              "Professional production quality throughout.",
+              "Scripted dialogue and acting performances.",
+              "Absence of direct address or informal vlogging style.",
+              "Idealized settings and polished visuals."
+            ]
+          }
+        },
+        {
+          "id": "shorts_sfv_adaptation_medium",
+          "detected": false,
+          "confidence_score": 0.8,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video leans heavily towards a traditional commercial production style with high polish, professional acting, and a clear problem-solution narrative. While it uses relatable scenarios, the execution is entirely professional, lacking authentic or native social content elements to create a balance. There is no deliberate attempt to blend professional elements with raw, user-generated style aspects.",
+            "evidence": [
+              {
+                "aspect": "production",
+                "professional_elements": [
+                  "Quality lighting (0:00-0:10)",
+                  "Clear audio (0:00-0:10)",
+                  "Stable camera work (0:00-0:10)",
+                  "Good editing (0:00-0:10)",
+                  "Clean composition (0:00-0:10)"
+                ],
+                "authentic_elements": [
+                  "Real locations (homestay, resort balcony)"
+                ],
+                "balance_quality": "Highly professional, minimal authentic production elements.",
+                "timestamps": [
+                  0.0,
+                  0.07
+                ]
+              },
+              {
+                "aspect": "content",
+                "professional_elements": [
+                  "Clear messaging (Agoda provides deals) (0:04-0:07)",
+                  "Strategic flow (problem-solution) (0:00-0:10)",
+                  "Quality transitions (0:06-0:07)",
+                  "Focused storytelling (honeymoon redemption) (0:00-0:10)",
+                  "Brand integration (Agoda app as solution) (0:04-0:07)"
+                ],
+                "authentic_elements": [
+                  "Genuine reactions (initial shock, then excitement) (0:00-0:06)"
+                ],
+                "balance_quality": "Professional narrative, with reactions being the only subtle authentic elements amidst a staged scenario.",
+                "timestamps": [
+                  0.03,
+                  0.06
+                ]
+              },
+              {
+                "aspect": "presentation",
+                "professional_elements": [
+                  "Clear speech (actors' dialogue) (0:00-0:07)",
+                  "Good pacing (0:00-0:10)",
+                  "Confident delivery (actors) (0:00-0:07)",
+                  "Quality performance (0:00-0:10)",
+                  "Structured flow (0:00-0:10)"
+                ],
+                "authentic_elements": [],
+                "balance_quality": "Fully professional and polished delivery by actors, no natural connection or conversational tone typical of native content.",
+                "timestamps": [
+                  0.0,
+                  0.06
+                ]
+              },
+              {
+                "aspect": "authenticity",
+                "professional_elements": [
+                  "Refined moments (0:07-0:10)",
+                  "Key messaging (50% off hotels) (0:04-0:05)",
+                  "Brand standards (Agoda logo) (0:00-0:10)",
+                  "Quality control (overall ad polish) (0:00-0:10)"
+                ],
+                "authentic_elements": [],
+                "balance_quality": "The video prioritizes professional polish and brand promotion over deliberate authenticity or candid interactions.",
+                "timestamps": [
+                  0.04
+                ]
+              }
+            ],
+            "strengths": [],
+            "weaknesses": [
+              "Overly professional production that lacks raw or spontaneous elements.",
+              "Scripted acting and dialogue, removing natural feel.",
+              "Absence of direct address or interaction with the viewer.",
+              "The narrative is purely promotional, not an organic personal story."
+            ]
+          }
+        },
+        {
+          "id": "shorts_sfv_adaptation_high",
+          "detected": false,
+          "confidence_score": 0.9,
+          "evaluation": {
+            "production_style": {
+              "observed_level": "Traditional Commercial",
+              "key_elements": [
+                {
+                  "element": "Professional studio lighting",
+                  "style_type": "Traditional Commercial",
+                  "timestamp": 0.0,
+                  "description": "The lighting throughout the video, even in the outdoor scenes, is professionally managed and consistent, not natural or mixed."
+                },
+                {
+                  "element": "Perfect exposure control",
+                  "style_type": "Traditional Commercial",
+                  "timestamp": 0.0,
+                  "description": "Every shot is perfectly exposed, indicating high-level camera control and post-production."
+                },
+                {
+                  "element": "Polished transitions",
+                  "style_type": "Traditional Commercial",
+                  "timestamp": 0.06,
+                  "description": "The quick, seamless transition from the phone screen to the resort balcony is highly polished and serves the commercial narrative."
+                },
+                {
+                  "element": "Commercial-grade audio",
+                  "style_type": "Traditional Commercial",
+                  "timestamp": 0.0,
+                  "description": "The dialogue is clear, background music is professionally mixed, and there are no raw audio elements."
+                }
+              ],
+              "overall_quality": "High production quality with a polished, commercial aesthetic."
+            },
+            "content_approach": {
+              "presentation_style": "Formal presentation through scripted acting.",
+              "delivery_type": "Scripted delivery by professional talent.",
+              "authenticity_level": "Low, the scenario feels staged for promotional purposes.",
+              "key_moments": [
+                {
+                  "timestamp": 0.0,
+                  "description": "Actors deliver dialogue in a theatrical, expressive manner.",
+                  "style_indicator": "Scripted delivery"
+                },
+                {
+                  "timestamp": 0.07,
+                  "description": "The solution (Agoda) leads to an idealized, aspirational outcome.",
+                  "style_indicator": "Brand-first messaging"
+                }
+              ]
+            },
+            "visual_elements": {
+              "framing_style": "Perfect framing with subjects centered or strategically placed for visual impact.",
+              "graphics_type": "Clean, branded graphics (Agoda logo, app interface, text overlay for deal).",
+              "effects_approach": "Minimal special effects, focusing on realistic and aspirational visuals.",
+              "environment": "Controlled settings, from a rustic homestay exterior to a luxurious resort balcony.",
+              "key_visuals": [
+                "Couple reacting to homestay (0:00-0:03)",
+                "Phone displaying Agoda app with deals (0:04-0:06)",
+                "Couple enjoying luxury resort with mountain views (0:07-0:10)"
+              ]
+            },
+            "adaptation_markers": {
+              "traditional_elements": [
+                {
+                  "type": "Production Quality",
+                  "description": "Professional lighting, stable camera work, and high-quality visuals are maintained throughout.",
+                  "impact": "Creates a polished, commercial look that prioritizes brand image and aspirational outcomes."
+                },
+                {
+                  "type": "Content Approach",
+                  "description": "The narrative is a clear problem-solution arc, with actors delivering scripted lines and reactions.",
+                  "impact": "Directly promotes the product benefits in a structured, persuasive manner, typical of traditional advertising."
+                },
+                {
+                  "type": "Visual Elements",
+                  "description": "The use of idealized settings and clean graphics for the Agoda app interface.",
+                  "impact": "Showcases the product and its benefits in an appealing and controlled environment."
+                }
+              ],
+              "native_elements": []
+            },
+            "overall_assessment": {
+              "adaptation_level": "Low",
+              "style_balance": "Heavily weighted towards traditional commercial style.",
+              "authenticity_score": 0.2,
+              "key_observations": [
+                "The video is produced with a high degree of polish and control, typical of traditional advertising.",
+                "The performances are clearly scripted, and the narrative follows a commercial problem-solution format.",
+                "There are no spontaneous or user-generated content elements.",
+                "The ad aims to present an aspirational lifestyle directly linked to the product."
+              ]
+            }
+          }
+        },
+        {
+          "id": "shorts_emoji_usage",
+          "detected": false,
+          "confidence_score": 1.0,
+          "score": 1,
+          "evaluation": {
+            "rationale": "No emojis were detected as visual elements in the video. The content focuses on live-action scenes, app interface, and text overlays that do not include emojis.",
+            "evidence": [],
+            "strengths": [],
+            "weaknesses": []
+          }
+        },
+        {
+          "id": "shorts_micro_trend",
+          "detected": false,
+          "confidence_score": 0.8,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video does not incorporate any recognizable short-lived micro-trends such as specific trending audio, visual effects, challenge formats, or structural patterns common on social media platforms. It relies on a traditional commercial narrative structure.",
+            "evidence": [],
+            "strengths": [],
+            "weaknesses": [
+              "Absence of trending audio or music.",
+              "No specific visual effects or transitions linked to current micro-trends.",
+              "Lack of challenge or popular content format adoption."
+            ]
+          }
+        },
+        {
+          "id": "shorts_meso_trend",
+          "detected": true,
+          "confidence_score": 0.7,
+          "score": 3,
+          "evaluation": {
+            "rationale": "The video utilizes a common 'problem-solution' or 'before-after' narrative structure, which is an established content template, especially effective in short-form video to quickly convey value proposition. The initial disappointment followed by finding a deal on Agoda and then showing an improved situation fits this meso-trend. The 'reveal' of the solution on the phone and then the positive outcome is a well-known structural element.",
+            "evidence": [
+              {
+                "format_type": "structural",
+                "pattern": "Problem-Solution / Before-After narrative",
+                "implementation": "The video starts with the couple's disappointment (problem) with their current accommodation, then introduces Agoda as the solution, leading to a much better experience (after/solution).",
+                "timestamps": [
+                  0.0,
+                  0.03,
+                  0.04,
+                  0.07
+                ],
+                "quality": "Well-executed, clear and impactful in a short timeframe."
+              }
+            ],
+            "strengths": [
+              "Clear and concise 'problem-solution' arc.",
+              "Effective use of contrast between 'before' and 'after' scenarios."
+            ],
+            "weaknesses": [
+              "The execution is very polished, which can sometimes reduce the 'native' feel associated with some meso-trends on social media."
+            ]
+          }
+        },
+        {
+          "id": "shorts_macro_trend",
+          "detected": false,
+          "confidence_score": 0.8,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video focuses purely on promoting hotel bookings through Agoda, emphasizing deals and comfort. It does not align with or address any broader cultural macro-trends such as social justice, environmental sustainability, mental health awareness, or digital transformation. The content is purely transactional and service-oriented.",
+            "evidence": [],
+            "strengths": [],
+            "weaknesses": [
+              "No explicit or implicit messaging related to social movements.",
+              "No mention or visual cues regarding environmental concerns or sustainability.",
+              "The theme of a honeymoon does not intrinsically connect to any recognized macro-trends.",
+              "The focus is on personal convenience and savings, not societal values."
+            ]
+          }
+        },
+        {
+          "id": "shorts_traditional_ad",
+          "detected": true,
+          "confidence_score": 0.95,
+          "score": 4,
+          "evaluation": {
+            "rationale": "The video exhibits all key characteristics of a traditional TV commercial, from its high production quality and professional acting to its clear problem-solution narrative and explicit brand messaging. It lacks any typical social media content features, such as creator-style delivery or platform-specific interactive elements.",
+            "evidence": [
+              {
+                "element_type": "production",
+                "commercial_indicators": [
+                  "Studio-quality lighting (0:00-0:10)",
+                  "Professional audio mix (0:00-0:10)",
+                  "Commercial-grade editing (0:00-0:10)",
+                  "Perfect framing (0:00-0:10)",
+                  "High-end equipment usage (implied by visual quality) (0:00-0:10)",
+                  "Professional color grading (0:00-0:10)"
+                ],
+                "timestamps": [
+                  0.0,
+                  0.07
+                ],
+                "impact": "Creates a highly polished, aspirational, and professional look associated with TV advertisements."
+              },
+              {
+                "element_type": "content",
+                "commercial_indicators": [
+                  "Standard ad narrative (problem: bad honeymoon, solution: Agoda deals, result: luxurious honeymoon) (0:00-0:10)",
+                  "Traditional pacing (build-up, solution, resolution) (0:00-0:10)",
+                  "Commercial messaging ('Deals! Right now!', 'We don't need to compromise at all!') (0:04-0:07)",
+                  "Brand presentation (Agoda app shown prominently) (0:04-0:06)",
+                  "Product demonstration (using Agoda app to find deals) (0:04-0:06)",
+                  "Professional scripting (dialogue and reactions) (0:00-0:07)"
+                ],
+                "timestamps": [
+                  0.0,
+                  0.04,
+                  0.07
+                ],
+                "impact": "Clearly communicates a brand-centric message in a structured, persuasive way, akin to a traditional commercial."
+              },
+              {
+                "element_type": "presentation",
+                "commercial_indicators": [
+                  "Professional talent (actors portraying a couple) (0:00-0:10)",
+                  "Scripted delivery (dialogue and emotional arc) (0:00-0:07)",
+                  "Formal presentation (no direct-to-camera address or casual chat) (0:00-0:10)",
+                  "Polished performance (exaggerated surprise, then contentment) (0:03-0:07)",
+                  "Commercial acting (0:00-0:10)"
+                ],
+                "timestamps": [
+                  0.0,
+                  0.03,
+                  0.06
+                ],
+                "impact": "The actors' performances and overall delivery are professionally staged, not spontaneous or user-generated."
+              },
+              {
+                "element_type": "format",
+                "commercial_indicators": [
+                  "Traditional ad format (short, concise, call-to-action at the end) (0:00-0:12)",
+                  "Standard shot sequences (establishing shot, reaction shots, product shot, resolution shot) (0:00-0:10)",
+                  "Professional transitions (seamless cuts between scenes) (0:06-0:07)",
+                  "Commercial music (background score enhancing emotional tone) (0:00-0:12)",
+                  "Standard ad timing (12-second duration with a clear brand message) (0:00-0:12)"
+                ],
+                "timestamps": [
+                  0.06,
+                  0.11
+                ],
+                "impact": "The overall structure and presentation align perfectly with a broadcast commercial, designed for mass appeal and brand recall."
+              }
+            ],
+            "strengths": [
+              "High production values with excellent cinematography, lighting, and audio.",
+              "Clear, concise problem-solution narrative.",
+              "Professional acting and scripted delivery.",
+              "Effective use of a call-to-action and brand reinforcement at the end."
+            ],
+            "weaknesses": [
+              "Complete absence of social media native elements, making it feel less organic for platforms that favor user-generated content."
+            ]
+          }
+        },
+        {
+          "id": "shorts_partial_social",
+          "detected": false,
+          "confidence_score": 0.8,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video does not exhibit partial social media characteristics (25-50%). Instead, it is overwhelmingly a traditional commercial with high production value, professional acting, and a polished narrative. There are no clear elements that suggest an intentional blend with social media styles like casual shooting, direct address, or platform-native features. The inclusion of a phone screen displaying an app is a common commercial technique, not necessarily a social media characteristic.",
+            "evidence": [
+              {
+                "element_type": "platform",
+                "social_aspects": [],
+                "traditional_aspects": [
+                  "No native elements, platform tools, or social formatting.",
+                  "Agoda app displayed in a professional, commercial manner (0:04-0:06)."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.04
+                ]
+              },
+              {
+                "element_type": "creator",
+                "social_aspects": [],
+                "traditional_aspects": [
+                  "No direct address to camera or informal elements from a 'creator'.",
+                  "Performances are clearly scripted and acted (0:00-0:10)."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.0
+                ]
+              },
+              {
+                "element_type": "production",
+                "social_aspects": [],
+                "traditional_aspects": [
+                  "Consistently professional production quality (lighting, camera, audio, editing) (0:00-0:10).",
+                  "No raw footage, natural lighting variations, or casual shots.",
+                  "Highly polished visual and audio aesthetics."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.0
+                ]
+              },
+              {
+                "element_type": "delivery",
+                "social_aspects": [],
+                "traditional_aspects": [
+                  "Primarily scripted dialogue and reactions (0:00-0:07).",
+                  "No casual speech or authentic impromptu moments.",
+                  "Formal presentation through acting."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.0
+                ]
+              }
+            ],
+            "strengths": [],
+            "weaknesses": [
+              "The video's high production value and scripted nature firmly place it in the traditional commercial category.",
+              "Lack of any genuine 'social' elements, such as direct audience engagement, informal presentation, or use of native platform features in a non-commercial way."
+            ]
+          }
+        },
+        {
+          "id": "shorts_mostly_social",
+          "detected": false,
+          "confidence_score": 0.9,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video does not exhibit predominant (75%+) social media characteristics. It is a professionally produced commercial with a clear narrative structure, professional acting, high production value, and explicit brand messaging. There are no elements that suggest a creator-style approach, platform-native features used extensively, or any significant authentic, unscripted moments.",
+            "evidence": [
+              {
+                "element_type": "platform",
+                "social_elements": [],
+                "traditional_elements": [
+                  "No extensive platform feature use or native content structure.",
+                  "Agoda app shown as a product demonstration rather than native usage (0:04-0:06).",
+                  "No community engagement style."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.04
+                ]
+              },
+              {
+                "element_type": "creator",
+                "social_elements": [],
+                "traditional_elements": [
+                  "No direct audience address or personal tone/style.",
+                  "Performances are clearly scripted and acted, not authentic delivery (0:00-0:10)."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.0
+                ]
+              },
+              {
+                "element_type": "production",
+                "social_elements": [],
+                "traditional_elements": [
+                  "Consistent professional production quality, not natural lighting or raw footage (0:00-0:10).",
+                  "Polished editing and composition, no casual shooting style.",
+                  "High-end visual and audio aesthetics."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.0
+                ]
+              },
+              {
+                "element_type": "delivery",
+                "social_elements": [],
+                "traditional_elements": [
+                  "Scripted dialogue and reactions, not a conversational tone (0:00-0:07).",
+                  "No unscripted moments or natural speech patterns.",
+                  "Formal, performance-driven delivery."
+                ],
+                "ratio_estimate": "0% social vs 100% traditional",
+                "timestamps": [
+                  0.0
+                ]
+              }
+            ],
+            "strengths": [],
+            "weaknesses": [
+              "The video is entirely a traditional commercial with high production values and scripted content.",
+              "It lacks any significant elements that would categorize it as predominantly social media content.",
+              "No organic or creator-driven style is present."
+            ]
+          }
+        },
+        {
+          "id": "shorts_transitions",
+          "detected": true,
+          "confidence_score": 0.85,
+          "score": 3,
+          "evaluation": {
+            "rationale": "The video features a notable creative transition that effectively communicates a 'before and after' scenario. The quick cut from the couple looking at the phone to them being in a luxurious resort with a mountain view serves as a dramatic visual transformation, going beyond a standard scene change.",
+            "evidence": [
+              {
+                "transition_type": "visual",
+                "description": "A quick, almost instantaneous cut from the couple looking at a phone showing Agoda deals to the same couple comfortably seated on a balcony overlooking a luxurious mountain resort.",
+                "timestamp": 0.06,
+                "duration": 0.0,
+                "impact": "This transition dramatically highlights the positive outcome of using Agoda, transforming a moment of disappointment into one of luxury and contentment. It's a 'magic' transition that effectively sells the product's benefit."
+              }
+            ],
+            "strengths": [
+              "The transition at 0:06 is highly effective in conveying the immediate positive change facilitated by the Agoda app.",
+              "It's a visually impactful way to show the 'result' or 'after' state."
+            ],
+            "weaknesses": [
+              "While effective, it's one primary creative transition, not multiple varied creative transitions."
+            ]
+          }
+        },
+        {
+          "id": "shorts_gap_utilization",
+          "detected": false,
+          "confidence_score": 1.0,
+          "score": 1,
+          "evaluation": {
+            "rationale": "The video is presented in a full vertical format, meaning there are no top and bottom gaps (letterboxing) created by adapting horizontal/square content. The content fills the entire vertical screen, therefore there is no opportunity for gap utilization.",
+            "evidence": [],
+            "strengths": [],
+            "weaknesses": []
+          }
+        },
+        {
+          "id": "shorts_product_result",
+          "detected": true,
+          "confidence_score": 0.9,
+          "evaluation": {
+            "technical_analysis": {
+              "result_demonstrations": [
+                {
+                  "timestamp": 0.0,
+                  "type": "before_after",
+                  "demonstration_method": "Sequential narrative with contrasting environments",
+                  "visual_evidence": "Starts with a disappointed couple at a rustic 'Homestay', transitions to them happily enjoying a luxurious mountain resort.",
+                  "clarity_score": 0.95
+                },
+                {
+                  "timestamp": 0.04,
+                  "type": "effectiveness",
+                  "demonstration_method": "On-screen display of deals on the Agoda app",
+                  "visual_evidence": "Mobile phone showing 'up to 50% off Domestic hotels' on the Agoda app.",
+                  "clarity_score": 0.85
+                }
+              ],
+              "supporting_elements": {
+                "visual_aids": [
+                  "Rustic 'Homestay' exterior at 0:00",
+                  "Agoda app interface on a phone at 0:04",
+                  "Luxurious resort balcony with mountain view at 0:07",
+                  "Happy, relaxed couple at 0:07"
+                ],
+                "text_overlays": [
+                  "Caption: 'This is our honeymoon?' at 0:00 (problem setup)",
+                  "Caption: 'Deals! Right now!' at 0:04 (solution discovered)",
+                  "Caption: 'We don't need to compromise at all!' at 0:06 (benefit/result stated)",
+                  "Brand message: 'Book domestic hotels with up to 50% off. Agoda.' at 0:11"
+                ],
+                "speech_context": [
+                  "Female: 'This is our honeymoon?' (0:00)",
+                  "Male: 'Deals! Right now!' (0:04)",
+                  "Female: 'We don't need to compromise at all!' (0:06)"
+                ]
+              }
+            },
+            "result_quality": {
+              "clarity_level": "High",
+              "evidence_strength": "Strong, clearly showing a transformation.",
+              "demonstration_effectiveness": "Very effective, quickly communicates the value proposition.",
+              "outcome_visibility": "Highly visible and impactful, contrasting dissatisfaction with luxury."
+            },
+            "combined_assessment": {
+              "primary_result_type": "Before/After and Effectiveness",
+              "evidence_quality": {
+                "visual_proof": "Excellent, the visual contrast between the two accommodations is stark and compelling.",
+                "supporting_content": "Strong, dialogue and text overlays reinforce the visual narrative of problem-solution-result.",
+                "presentation_clarity": "Very clear, the message that Agoda provides better options and deals is unmistakable."
+              },
+              "effectiveness_metrics": {
+                "result_clarity": 0.95,
+                "proof_strength": 0.9,
+                "viewer_understanding": "High"
+              }
+            }
+          }
+        },
+        {
+          "id": "shorts_creator_name_mention",
+          "detected": false,
+          "confidence_score": 1.0,
+          "evaluation": {
+            "metadata_analysis": {
+              "name_mentions": [],
+              "detection_quality": {
+                "text_clarity": "N/A",
+                "audio_quality": "Clear",
+                "evidence_strength": "No evidence detected."
+              }
+            },
+            "mention_analysis": {
+              "reference_types": [],
+              "display_methods": [],
+              "context_quality": "No creator name mentioned in any context."
+            },
+            "overall_assessment": {
+              "mention_confidence": 0.0,
+              "primary_evidence": "No visual or audible creator name mention.",
+              "supporting_factors": []
+            }
+          }
+        },
+        {
+          "id": "shorts_partnership_disclosure",
+          "detected": false,
+          "confidence_score": 0.8,
+          "evaluation": {
+            "technical_analysis": {
+              "disclosure_instances": [],
+              "placement_quality": {
+                "visibility": "N/A",
+                "timing": "N/A",
+                "duration": 0.0
+              }
+            },
+            "disclosure_assessment": {
+              "clarity_level": "No disclosure present.",
+              "language_explicitness": "N/A",
+              "disclosure_methods": [],
+              "effectiveness": "No disclosure present."
+            },
+            "combined_insights": {
+              "primary_disclosure": {
+                "content": "No partnership disclosure identified.",
+                "timestamp": 0.0,
+                "method": "N/A",
+                "effectiveness": "N/A"
+              },
+              "supporting_elements": [],
+              "overall_clarity": "No partnership disclosure was made, either visually or verbally."
+            }
+          }
+        },
+        {
+          "id": "shorts_personal_character_talk",
+          "detected": false,
+          "confidence_score": 0.9,
+          "evaluation": {
+            "technical_analysis": {
+              "primary_character": {
+                "appearances": [
+                  {
+                    "timestamp": 0.0,
+                    "duration": 0.03,
+                    "speaking": true,
+                    "direct_address": false,
+                    "screen_dominance": "high"
+                  },
+                  {
+                    "timestamp": 0.03,
+                    "duration": 0.06,
+                    "speaking": true,
+                    "direct_address": false,
+                    "screen_dominance": "high"
+                  },
+                  {
+                    "timestamp": 0.07,
+                    "duration": 0.03,
+                    "speaking": false,
+                    "direct_address": false,
+                    "screen_dominance": "high"
+                  }
+                ],
+                "total_screen_time": 0.1,
+                "percentage_of_video": 83.33,
+                "technical_dominance": {
+                  "visual_focus": "The couple is the constant visual focus.",
+                  "speech_control": "Both characters speak and drive the early narrative.",
+                  "screen_presence": "High screen presence for both individuals."
+                }
+              },
+              "direct_address_markers": {
+                "camera_engagement_points": [],
+                "eye_contact_duration": 0.0,
+                "viewer_acknowledgment_moments": []
+              }
+            },
+            "communication_analysis": {
+              "character_centrality": {
+                "story_control": "The story is driven by the reactions and dialogue of two characters, not a single one.",
+                "narrative_ownership": "Shared between the two individuals.",
+                "message_delivery_role": "They collectively set up the problem and react to the solution."
+              },
+              "viewer_connection": {
+                "engagement_quality": "The engagement is between the characters, not directly with the viewer.",
+                "personal_relationship_building": "No direct attempt to build a personal relationship with the viewer through direct address.",
+                "trust_establishment": "Trust is established through relatable scenario, not direct interaction."
+              }
+            },
+            "combined_insights": {
+              "single_character_assessment": {
+                "is_primary_driver": false,
+                "screen_time_dominance": 0.83,
+                "story_control_level": "Shared narrative control by a couple.",
+                "supporting_character_contrast": "No single primary character, but a duo driving the initial plot."
+              },
+              "direct_address_quality": {
+                "camera_relationship": "Third-person perspective; characters interact with each other or the phone, not the camera.",
+                "viewer_engagement": "Indirect engagement through observation of the couple's reactions.",
+                "connection_effectiveness": "The connection is empathetic to their situation, not personal with them as presenters."
+              },
+              "overall_evaluation": {
+                "character_driven_score": 2,
+                "direct_address_score": 1,
+                "combined_effectiveness": "The video uses multiple characters and indirect camera address, leaning away from personal character talk.",
+                "distinctive_techniques": [
+                  "Two-person dialogue to establish a relatable scenario.",
+                  "Focus on reactions and problem-solving via the Agoda app rather than direct viewer interaction."
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "shorts_native_brand_context",
+          "detected": false,
+          "confidence_score": 0.75,
+          "evaluation": {
+            "technical_analysis": {
+              "brand_instances": [
+                {
+                  "timestamp": 0.0,
+                  "type": "visual",
+                  "context": "Agoda logo on screen",
+                  "prominence": "primary",
+                  "integration_quality": "Explicit branding"
+                },
+                {
+                  "timestamp": 0.04,
+                  "type": "visual",
+                  "context": "Agoda app on phone",
+                  "prominence": "primary",
+                  "integration_quality": "Product-as-solution"
+                },
+                {
+                  "timestamp": 0.11,
+                  "type": "text",
+                  "context": "Agoda brand message on screen",
+                  "prominence": "primary",
+                  "integration_quality": "Clear call to action/brand reinforcement"
+                }
+              ],
+              "content_emphasis": {
+                "story_focus": "The story is designed to lead directly to the brand as the solution to a problem.",
+                "value_priority": "The value proposition (deals/luxury travel) is directly linked to the brand.",
+                "user_benefit_clarity": "Clear: Agoda helps you avoid bad hotels and find good deals."
+              }
+            },
+            "integration_analysis": {
+              "authenticity_assessment": {
+                "natural_fit": "The brand appears as the direct and immediate solution to the problem, making its appearance central rather than background.",
+                "contextual_relevance": "Highly relevant as the solution to their accommodation dilemma.",
+                "forced_rating": "Moderate - while relevant, the narrative is constructed to highlight the brand's problem-solving capability as the central plot point."
+              },
+              "balance_evaluation": {
+                "brand_vs_content": "The content exists to showcase the brand's utility and benefits.",
+                "secondary_positioning": "No, the brand is presented as the primary solution and focal point of change.",
+                "prominence_level": "High prominence, especially when the app is shown and the final brand message appears."
+              }
+            },
+            "combined_insights": {
+              "key_integration_points": [
+                {
+                  "timestamp": 0.04,
+                  "technical_aspects": {
+                    "brand_presence": "Agoda app prominently displayed on phone, actively used by character.",
+                    "content_context": "The turning point of the narrative, where the solution to the 'bad honeymoon' problem is found."
+                  },
+                  "strategic_value": {
+                    "integration_quality": "Direct and functional.",
+                    "naturalness": "Functional, but central to the plot, not a secondary element.",
+                    "user_value": "Immediate and impactful problem-solving."
+                  }
+                }
+              ],
+              "overall_assessment": {
+                "native_quality_score": 2,
+                "content_first_rating": "Brand is integral to the content's solution.",
+                "key_strengths": [
+                  "Brand is presented as an effective problem-solver.",
+                  "Clear linkage between product use and positive outcome."
+                ],
+                "authenticity_level": "Staged promotional context."
+              }
+            }
+          }
+        },
+        {
+          "id": "shorts_personal_character_type",
+          "detected": true,
+          "confidence_score": 0.7,
+          "evaluation": {
+            "technical_analysis": {
+              "main_character": {
+                "appearance_markers": {
+                  "production_quality": "Professional production, high visual clarity, good lighting.",
+                  "setting_type": "Realistic exterior of a homestay and an aspirational luxury resort balcony.",
+                  "presentation_style": "Exaggerated but relatable reactions and dialogue.",
+                  "visual_indicators": [
+                    "Two young adults, seemingly a couple.",
+                    "Casual yet stylish attire.",
+                    "No overt signs of celebrity status or highly stylized looks."
+                  ]
+                },
+                "speech_patterns": {
+                  "delivery_style": "Conversational, with clear emotional expressions.",
+                  "scripting_level": "Appears scripted due to precise timing and dramatic arc.",
+                  "naturalness": "Performances aim for relatability but are polished.",
+                  "linguistic_markers": [
+                    "Use of personal pronouns ('our honeymoon', 'we don't need to compromise')."
+                  ]
+                }
+              },
+              "supporting_evidence": [
+                {
+                  "timestamp": 0.0,
+                  "element": "Female actor's reaction to the homestay",
+                  "character_type_indicator": "Relatable expression of disappointment."
+                },
+                {
+                  "timestamp": 0.03,
+                  "element": "Male actor interacting with the phone",
+                  "character_type_indicator": "Common action of looking for deals on a mobile device."
+                },
+                {
+                  "timestamp": 0.07,
+                  "element": "Couple relaxing in a luxurious setting",
+                  "character_type_indicator": "Aspirational but general portrayal of a happy couple on vacation."
+                }
+              ]
+            },
+            "character_assessment": {
+              "identified_type": "everyday_person",
+              "confidence_factors": [
+                "Lack of celebrity recognition for the actors.",
+                "Relatable scenario of honeymoon travel mishaps.",
+                "Reactions and dialogue, while scripted, mimic everyday emotional responses."
+              ],
+              "authenticity_markers": {
+                "natural_elements": [
+                  "Authentic expressions of disappointment and excitement."
+                ],
+                "relatable_qualities": [
+                  "The scenario of a honeymoon gone wrong is a common travel concern.",
+                  "The desire for a good deal and a pleasant stay is universal."
+                ],
+                "genuine_indicators": [
+                  "Despite being acted, the emotional beats feel plausible."
+                ]
+              },
+              "counter_indicators": [
+                "Polished acting and clear scripting reduce the raw 'everyday' feel.",
+                "High production quality typical of commercials."
+              ]
+            },
+            "combined_insights": {
+              "character_authenticity": {
+                "relatability_score": 3,
+                "authenticity_level": "Generally relatable but professionally staged.",
+                "everyday_qualities": "The characters embody typical travelers experiencing common issues and seeking solutions."
+              },
+              "viewer_connection": {
+                "identification_potential": "High, viewers can easily empathize with their travel situation.",
+                "parasocial_relationship": "Low, no direct connection or personal address to the viewer.",
+                "authenticity_impact": "The relatability of their situation enhances the perceived impact of the solution."
+              },
+              "overall_assessment": {
+                "everyday/influencer_qualities": 0.7,
+                "celebrity/actor_qualities": 0.3,
+                "primary_classification": "everyday_person",
+                "key_determining_factors": [
+                  "The characters are not recognizable public figures.",
+                  "The scenario and emotional responses are designed to be broadly relatable to a general audience, rather than specific to a creator persona.",
+                  "Their reactions and interactions are within the scope of typical traveler behavior."
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "shorts_product_context",
+          "detected": false,
+          "confidence_score": 0.75,
+          "evaluation": {
+            "technical_analysis": {
+              "product_instances": [
+                {
+                  "timestamp": 0.04,
+                  "type": "visual",
+                  "prominence": "foreground",
+                  "duration": 0.03,
+                  "screen_position": "center"
+                },
+                {
+                  "timestamp": 0.11,
+                  "type": "text",
+                  "prominence": "foreground",
+                  "duration": 0.01,
+                  "screen_position": "bottom"
+                }
+              ],
+              "content_emphasis": {
+                "story_development": "The product is the central turning point in the story, transforming a bad experience into a good one.",
+                "content_value": "The value of the content is derived from the product's ability to solve the presented problem.",
+                "user_experience": "The product directly impacts the characters' experience, shifting it from negative to positive."
+              },
+              "balance_metrics": {
+                "product_screen_time_ratio": 0.25,
+                "mention_frequency": 2.0,
+                "visual_prominence_score": 0.8
+              }
+            },
+            "integration_analysis": {
+              "secondary_positioning": {
+                "background_quality": "No, the product is actively used and central to the plot resolution.",
+                "supporting_role": "No, it's the main driver of the positive change.",
+                "natural_presence": "Present in a functional, problem-solving context, but its centrality prevents it from being secondary."
+              },
+              "contextual_relevance": {
+                "realistic_usage": "Yes, using an app to find hotel deals is realistic.",
+                "scenario_authenticity": "The problem-solution scenario is authentic, but the product's role is highlighted as the primary solution.",
+                "environmental_fit": "The app is used in a moment of need, which is contextually appropriate."
+              }
+            },
+            "combined_insights": {
+              "secondary_element_indicators": [
+                {
+                  "timestamp": 0.04,
+                  "context": "Character interacts directly with the Agoda app on a phone to find 'deals'.",
+                  "technical_aspects": {
+                    "positioning": "Foreground, held directly by the actor.",
+                    "prominence": "High visual focus, central to the scene."
+                  },
+                  "integration_quality": {
+                    "naturalness": "Functionally natural, but strategically highlighted as the key solution.",
+                    "relevance": "Extremely relevant to the problem at hand."
+                  }
+                }
+              ],
+              "overall_assessment": {
+                "secondary_positioning_score": 2,
+                "content_primacy_level": "The product is the catalyst and solution, making it highly central to the content.",
+                "integration_effectiveness": "The product is effectively integrated as the immediate problem-solver.",
+                "key_success_factors": [
+                  "Clear demonstration of product utility.",
+                  "Direct link between product use and positive outcome.",
+                  "Product serving as the narrative's turning point."
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "shorts_video_format",
+          "detected": true,
+          "confidence_score": 1.0,
+          "evaluation": {
+            "technical_analysis": {
+              "aspect_ratio": {
+                "height_to_width": 1.7777777777777777,
+                "orientation": "portrait",
+                "dimensions": {
+                  "width": 1080,
+                  "height": 1920
+                },
+                "standard_format": "9:16"
+              },
+              "composition_indicators": {
+                "vertical_framing": "Content is framed to fit the vertical screen, with subjects and scenes composed vertically.",
+                "object_alignment": "Subjects (people, phone, scenic view) are aligned within the portrait frame.",
+                "text_positioning": "Text overlays are positioned to fit comfortably within the vertical canvas without interfering with key visuals."
+              }
+            },
+            "mobile_design_assessment": {
+              "vertical_optimization": {
+                "content_flow": "The narrative flows naturally within the vertical space, from initial reactions to the resolution.",
+                "viewing_experience": "Optimized for mobile viewing, filling the screen without black bars.",
+                "platform_compatibility": "Highly compatible with short-form video platforms like YouTube Shorts, TikTok, Instagram Reels."
+              },
+              "intentional_design": {
+                "purpose_indicators": [
+                  "Full-screen vertical capture from the start.",
+                  "Composition designed for vertical framing.",
+                  "Text overlays placed specifically for vertical display."
+                ],
+                "mobile_native_elements": [
+                  "The entire production is geared towards a portrait aspect ratio."
+                ],
+                "adaptation_quality": "Excellent, the video was clearly shot and edited for a vertical format."
+              }
+            },
+            "combined_insights": {
+              "format_determination": {
+                "primary_evidence": [
+                  "Video dimensions (1080x1920)",
+                  "Aspect ratio (9:16)",
+                  "Visual composition within the portrait frame"
+                ],
+                "technical_confidence": 1.0,
+                "design_intention": "The video was intentionally produced in a vertical format for mobile viewing."
+              },
+              "overall_assessment": {
+                "vertical_format_score": 4,
+                "mobile_optimization_level": "Fully optimized",
+                "platform_appropriateness": "Perfectly suitable for vertical short-form video platforms.",
+                "key_format_indicators": [
+                  "Native 9:16 aspect ratio.",
+                  "All visual elements composed for portrait orientation."
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "content_type_ad_style_creator",
+          "detected": false,
+          "confidence_score": 0.9,
+          "content_type": "Traditional Ad Style",
+          "evaluation": {
+            "content_analysis": {
+              "narrative_style": "Problem-solution narrative, showcasing a common travel dilemma (bad honeymoon accommodation) and offering a brand-specific resolution (Agoda deals).",
+              "engagement_approach": "Broadcast-style communication, with characters interacting with each other or the product, not directly addressing the audience. The audience observes the scenario unfold.",
+              "messaging_tone": "Formal and persuasive, aiming to highlight the brand's ability to provide superior travel experiences and value.",
+              "authenticity_level": "Low - clearly scripted and staged, despite featuring relatable human emotions."
+            },
+            "production_analysis": {
+              "technical_quality": "High-end cinematic quality with professional lighting, clear audio, stable camera work, and polished editing.",
+              "visual_style": "Idealized commercial settings, transitioning from a rustic but still professionally shot 'bad' homestay to an aspirational, luxurious resort. Clean and controlled visuals.",
+              "audio_elements": "Professional dialogue delivery by actors, clear background music, and sound effects. No raw or ambient audio that would suggest a user-generated feel.",
+              "editing_approach": "Smooth, seamless transitions with precise cuts designed for maximum impact and clear narrative flow. The quick 'magic' transition to the resort is a key element."
+            },
+            "style_markers": {
+              "creator_elements": [],
+              "traditional_elements": [
+                "Problem-solution narrative with clear brand integration.",
+                "Professional actors portraying a couple.",
+                "Scripted dialogue and reactions (e.g., 'This is our honeymoon?', 'Deals! Right now!').",
+                "High production quality with professional lighting and cinematography.",
+                "Idealized 'after' scenario (luxury resort).",
+                "Explicit brand name and offer ('Agoda', 'up to 50% off') at the end."
+              ],
+              "distinguishing_features": "The video's high production value and clearly structured problem-solution narrative, executed by professional actors, strongly align it with traditional advertising. It prioritizes brand messaging and aspirational outcomes over personal, unscripted content."
+            },
+            "evidence": {
+              "timestamps": [
+                {
+                  "time": 0.0,
+                  "element": "Female actor's dialogue and expression: 'This is our honeymoon?'",
+                  "style_type": "Traditional",
+                  "description": "Scripted dialogue setting up the problem in a dramatic, professional manner."
+                },
+                {
+                  "time": 0.04,
+                  "element": "Male actor pointing to a phone screen displaying 'Agoda' and 'up to 50% off'",
+                  "style_type": "Traditional",
+                  "description": "Clear product demonstration and explicit deal promotion, central to the ad's message."
+                },
+                {
+                  "time": 0.06,
+                  "element": "Seamless visual transition from phone screen to luxurious resort balcony",
+                  "style_type": "Traditional",
+                  "description": "Professional editing technique to show a desirable outcome directly attributed to the product, creating an aspirational scene."
+                },
+                {
+                  "time": 0.07,
+                  "element": "Couple relaxing on a luxurious balcony with mountain views",
+                  "style_type": "Traditional",
+                  "description": "Idealized, aspirational setting and relaxed posture of actors, common in commercial portrayals of success/happiness."
+                }
+              ],
+              "key_moments": [
+                "The initial dialogue expressing disappointment at 0:00, setting up a problem that the brand will solve.",
+                "The clear display of the Agoda app with a deal at 0:04, presenting the brand as the direct solution.",
+                "The aspirational scene at 0:07, showcasing the ideal outcome provided by the brand."
+              ],
+              "production_notes": "The production choices, including professional cinematography, precise editing, and a curated soundscape, all work to create a polished, persuasive commercial message. Every element serves to enhance the brand's problem-solving and value proposition."
+            }
+          },
+          "reasoning_summary": "This video clearly adheres to a traditional ad style, utilizing professional acting, a scripted problem-solution narrative, and high production quality to deliver a brand-centric message, rather than a personal creator-driven approach."
+        },
+        {
+          "id": "content_type_ad_style",
+          "detected": false,
+          "confidence_score": 0.9,
+          "content_type": "Traditional Ad Style",
+          "evaluation": {
+            "content_analysis": {
+              "narrative_style": "Problem-solution narrative, presenting a common travel challenge (undesirable accommodation) and offering Agoda as the immediate, beneficial solution.",
+              "engagement_approach": "Broadcast and observational. The audience is an observer of the characters' experience and their interaction with the product, not directly addressed by them.",
+              "messaging_tone": "Persuasive and aspirational. It emphasizes avoiding compromise and achieving a better travel experience through Agoda's deals.",
+              "authenticity_level": "Low. While the initial problem is relatable, the entire scenario, dialogue, and reactions are scripted and professionally performed."
+            },
+            "production_analysis": {
+              "technical_quality": "High. Consistent professional lighting, clear camera work, and high-fidelity audio characterize the entire video.",
+              "visual_style": "Polished and cinematic. It transitions from a realistically shot 'undesirable' location to an idealized, aspirational luxury resort.",
+              "audio_elements": "Clear, studio-quality dialogue, professional background music, and sound effects to enhance the narrative's emotional arc.",
+              "editing_approach": "Smooth and precise, with seamless cuts and a particularly effective, almost 'magical' transition that instantly showcases the product's benefit (0:06-0:07)."
+            },
+            "style_markers": {
+              "creator_elements": [],
+              "traditional_elements": [
+                "Scripted problem-solution narrative (0:00-0:10).",
+                "Professional actors delivering lines and reactions (0:00-0:10).",
+                "High production values (lighting, camera, audio) (0:00-0:10).",
+                "Clear, explicit brand showcasing (Agoda app, logo, offer) (0:04-0:06, 0:11-0:12).",
+                "Aspirational outcome presented as a direct result of product use (0:07-0:10).",
+                "Formal voice-over and text-based call to action at the end (0:11-0:12)."
+              ],
+              "distinguishing_features": [
+                "The video's narrative is entirely structured around demonstrating a brand benefit, rather than a personal story or unscripted content.",
+                "The use of professional talent and polished production techniques throughout, without any elements suggesting casual, user-generated, or direct-to-camera creator content.",
+                "The explicit display of the brand and its offer as the central solution and a clear call-to-action reinforces its commercial nature."
+              ]
+            },
+            "evidence": {
+              "timestamps": [
+                {
+                  "time": 0.0,
+                  "element": "Dialogue: 'This is our honeymoon?' by the female character.",
+                  "style_type": "Traditional",
+                  "description": "Scripted dialogue initiating a relatable problem typical of ad narratives."
+                },
+                {
+                  "time": 0.04,
+                  "element": "Close-up of a phone screen showing the Agoda app with 'Up to 50% off Domestic hotels'.",
+                  "style_type": "Traditional",
+                  "description": "Direct product feature showcasing, clear and intentional brand visibility."
+                },
+                {
+                  "time": 0.06,
+                  "element": "Sudden transition from the phone to a luxurious resort balcony.",
+                  "style_type": "Traditional",
+                  "description": "Polished, impactful editing to demonstrate an aspirational result instantly."
+                },
+                {
+                  "time": 0.07,
+                  "element": "The couple happily seated on a balcony with a scenic mountain view.",
+                  "style_type": "Traditional",
+                  "description": "Idealized, professionally staged scene depicting the ultimate benefit of the product."
+                },
+                {
+                  "time": 0.11,
+                  "element": "Text overlay 'Book domestic hotels with up to 50% off. Agoda.'",
+                  "style_type": "Traditional",
+                  "description": "Explicit brand messaging and call-to-action typical of commercial advertisements."
+                }
+              ],
+              "key_moments": [
+                "The initial setup of the problem (0:00-0:03) through character dialogue and setting.",
+                "The introduction of the Agoda app as the solution (0:04-0:06) with a clear offer.",
+                "The immediate, aspirational transformation (0:06-0:10) demonstrating the product's impact."
+              ],
+              "production_notes": [
+                "The entire production is designed to highlight the brand's offering through a compelling, high-quality visual and auditory experience.",
+                "Editing pace is strategic, ensuring rapid problem identification and solution presentation.",
+                "Visual composition consistently favors brand and product showcasing, culminating in an aspirational image."
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "final_report": "**Overall System Score: 95.0 / 100**\n\n### Executive Summary\nThis video is a highly optimized, traditionally styled commercial flawlessly adapted for a 9:16 vertical mobile format. It excels in structural narrative and message clarity, utilizing a classic \"problem-solution\" arc (a ruined honeymoon salvaged by Agoda) that heavily triggers key Category Entry Points (CEPs). However, an evidence-based audit reveals a glaring AI-generation artifact that slightly undermines an otherwise premium production. \n\nHere is the ruthless, criterion-by-criterion breakdown based on sub-agent telemetry and the prescribed evaluation rubric.\n\n---\n\n### I. Structural & Narrative Criteria (Google ABCD & CEPs)\n\n**A.1 Attention | Score: 95/100**\n*   **Evidence:** The video hooks the viewer instantly at 0:00 with a high-contrast emotional state (disappointment) and sudden dramatic dialogue (\"This is our honeymoon?\"). Pacing is excellent, utilizing a highly effective \"magic transition\" at 0:06 that instantly snaps from the mobile app to a sweeping luxury mountain resort.\n*   **Verdict:** Exceptional mobile-first pacing and scroll-stopping visual contrast.\n\n**A.3 Connection | Score: 95/100**\n*   **Evidence:** The narrative leverages a universally understood pain point: bad travel accommodation. The transition from exaggerated dismay (0:00-0:03) to relaxed contentment (0:07-0:10) builds immediate empathetic relevance without relying on niche humor.\n*   **Verdict:** Broad, undeniable appeal that rapidly establishes emotional relevance.\n\n**E. Category Entry Points (CEPs) | Score: 100/100**\n*   **Evidence:** Flawless execution. The ad explicitly establishes \"why/when/where/with whom\" a hotel is needed. It perfectly simulates a high-urgency, real-world CEP: a last-minute booking needed to save a trip (\"Deals! Right now!\" at 0:04), anchoring Agoda as the ultimate trip-saver.\n*   **Verdict:** Textbook triggering of a major booking scenario.\n\n---\n\n### II. Message, Branding & Call-to-Action\n\n**G. Message Registration | Score: 98/100**\n*   **Evidence:** The core value proposition is unmissable. At 0:04, the phone screen displays \"up to 50% off Domestic hotels,\" directly supported by dialogue (\"We don't need to compromise at all!\"). This is reinforced by a final text overlay at 0:11: \"Book domestic hotels with up to 50% off. Agoda.\" \n*   **Verdict:** Crystal clear, repetitive, and visually dominant message salience.\n\n**A.2 Branding | Score: 95/100**\n*   **Evidence:** The brand is not just slapped on; it is the physical solution to the narrative's problem. The Agoda app is heavily featured centrally at 0:04, physically held by the actor, explicitly linking the brand to the act of booking and solving the conflict. \n*   **Verdict:** Unmistakably obvious linkage between the brand and the desired outcome.\n\n**D. Distinctive Brand Assets Integration | Score: 90/100**\n*   **Evidence:** Agoda’s UI, logo, and deal framing are deeply integrated into the midpoint (0:04) and the final frame (0:11). \n*   **Verdict:** Strong integration, leaving zero ambiguity regarding which platform is being advertised.\n\n**B. Brand Voice & Personality Fit | Score: 95/100**\n*   **Evidence:** The script uses punchy, optimistic language (\"Deals! Right now!\"). The tone shifts rapidly from a minor complaint to an upbeat, friendly, and empowering \"travel-guide\" vibe. \n*   **Verdict:** Highly aligned with a frictionless, optimistic travel brand identity.\n\n**A.4 Direction | Score: 90/100**\n*   **Evidence:** Explicit visual instruction at 0:11 (\"Book domestic hotels... Agoda.\"). \n*   **Verdict:** Frictionless and obvious next step, capitalizing on the urgency built in the prior 10 seconds.\n\n---\n\n### III. Technical & Cultural Execution\n\n**C. Technical / AI Execution | Score: 70/100**\n*   **Evidence:** While audio realism and A/V sync checkers report 100% flawless studio-quality mixing, the visual artifact agent caught a glaring error. Between **0:07-0:11**, the woman's hand holding the teacup exhibits **elongated, misshapen fingers** that blend unnaturally with the cup. \n*   **Verdict:** This is a severe \"uncanny valley\" AI-generation artifact that brutally betrays the high-end, cinematic gloss established in the first 6 seconds. It introduces aesthetic friction in the most important aspirational scene.\n\n**F. Cultural Resonance & Nuance (India Market) | Score: 85/100**\n*   **Evidence:** The promotion targets \"Domestic hotels,\" and the couple's situational reactions are universally understood. However, the styling leans heavily on traditional, generalized commercial tropes rather than specific, authentic Indian cultural nuance.\n*   **Verdict:** Safe, effective, and broadly relatable, but lacks deep localized texture. \n\n---\n\n### Orchestrator's Final Recommendation\nThe ad is structurally brilliant and functions perfectly as a high-converting, vertical-first commercial asset. **However, you must route the 0:07-0:11 shot back to post-production immediately.** The AI-generated anatomical failure on the actor's hand holding the teacup is a critical visual flaw that distracts from the luxury \"after\" state. Fix the hand artifact, and this asset is ready to deploy."
+}

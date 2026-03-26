@@ -1,0 +1,13 @@
+.venv/
+.scrap/
+.tmp/
+*.log
+debug*.txt
+__pycache__/
+*.py[cod]
+.DS_Store
+
+.adk/
+.terraform/
+*.tfstate*
+tfplan
