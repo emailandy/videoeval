@@ -16,12 +16,13 @@ from google.adk.agents import LlmAgent, Context
 from src.orchestrator import VideoAdEvaluator
 
 # 1. Define Tools / Functions
-async def evaluate_video_ad(video_uri: str, user_request: str = "Evaluate this video", context: Context = None) -> str:
+async def evaluate_video_ad(video_uri: str, user_request: str = "Evaluate this video", model_overrides: dict = None, context: Context = None) -> str:
     """
-    Evaluates a video advertisement using the dynamic rubric flow.
+    Evaluates a video advertisement using the dynamic rubric flow with optional model overrides.
     Args:
         video_uri: The GCS URI of the video to evaluate.
         user_request: Specific instructions or context for evaluation.
+        model_overrides: Optional dictionary mapping agent names to model IDs. Available agents: orchestrator, abcd_agent, audio_realism_checker, visual_artifact_checker, av_sync_checker.
         context: Optional ADK execution context for saving artifacts.
     Returns:
         A JSON string containing sub-agent findings and final report synthesis.
@@ -30,7 +31,7 @@ async def evaluate_video_ad(video_uri: str, user_request: str = "Evaluate this v
     config_path = os.path.join(WORKSPACE_ROOT, "config/agents.yaml")
     evaluator = VideoAdEvaluator(config_path=config_path)
     import asyncio
-    result = await asyncio.to_thread(evaluator.evaluate, video_uri, user_request)
+    result = await asyncio.to_thread(evaluator.evaluate, video_uri, user_request, model_overrides)
     
     if context:
         from google.genai import types
@@ -50,6 +51,8 @@ adk_agent = LlmAgent(
         "You are an AI Coordinator for Video Ad Evaluations. "
         "When provided with a video URI or request, you MUST use the `evaluate_video_ad` tool "
         "to trigger the evaluation workflow and return its findings. "
+        "The tool supports `model_overrides` to use specific models for specific checks. Available agents: "
+        "`orchestrator`, `abcd_agent`, `audio_realism_checker`, `visual_artifact_checker`, `av_sync_checker`. "
         "If a user uploads a file directly to the chat window without providing its string path or GCS URI, "
         "you MUST reply explaining that you need the file's disk path (e.g., `media_assets/videos/...`) "
         "to execute the evaluation tool correctly."

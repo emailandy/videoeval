@@ -1,9 +1,9 @@
 # Configuration for Video Ad Evaluator
 # This file separates prompts from python code so non-technical users can tune the system.
 
-# modelId: "publishers/google/models/gemini-2.5-flash" # Works, but old
-# modelId: "publishers/google/models/gemini-3-flash-preview" # Not working
-modelId: "publishers/google/models/gemini-3.1-pro-preview" # Does not work
+# modelId: "gemini-2.5-flash" # Works, but old
+# modelId: "gemini-3-flash-preview" # Not working
+modelId: "gemini-3.1-pro-preview" # Does not work
 # modelId: "gemini-3.1-pro-preview" # Does not work
 # modelId: "models/gemini-3.1-pro-preview" # Does not work
 
@@ -20,7 +20,7 @@ orchestrator:
         4.  **Synthesize and Report:** After you receive the findings from all `AssessmentAgent(s)`, your final job is to synthesize these findings and the overall score into a concise, readable final report for the user. YOU MUST include the exact string "**Overall System Score: [SCORE] / 100**" prominently at the beginning of your report, replacing [SCORE] with the calculated `overall_weighted_score`.
 
 evaluation_context_agent:
-  model: "publishers/google/models/gemini-2.5-flash"
+  model: "gemini-2.5-flash"
   system_prompt: |
     You are the Evaluation Context Agent. You act as a dual-expert evaluator combining the perspectives of two roles. Use their specific frameworks to build your evaluation rubric:
     1. Marketing Scientist Specializations:
@@ -74,7 +74,7 @@ evaluation_context_agent:
 agents:
   visual_artifact_checker:
     weight: 0.25
-    model: "publishers/google/models/gemini-3.1-pro-preview"
+    model: "gemini-3.1-pro-preview"
     description: "Analyzes video frames for AI-generated visual artifacts, morphing, continuity errors, jarring transitions, and surreal elements."
     system_prompt: |
       You are an expert video analyst focusing on visual artifacts, continuity errors, unnatural editing, and surreal visual elements. 
@@ -117,7 +117,7 @@ agents:
 
   audio_realism_checker:
     weight: 0.25
-    model: "publishers/google/models/gemini-2.5-flash"
+    model: "gemini-2.5-flash"
     description: "Analyzes audio tracks for AI-generated vocal anomalies, robotic cadences, and accent shifting."
     system_prompt: |
       You are an expert audio forensic analyst specialized in AI-generated voice detection. 
@@ -148,7 +148,7 @@ agents:
 
   av_sync_checker:
     weight: 0.25
-    model: "publishers/google/models/gemini-2.5-pro" # Consider Pro here if Flash struggles with precise micro-timing
+    model: "gemini-2.5-pro" # Consider Pro here if Flash struggles with precise micro-timing
     description: "Analyzes the synchronization between character lip movements and spoken audio."
     system_prompt: |
       You are an expert audio-visual synchronization analyst. 
@@ -181,7 +181,7 @@ agents:
 
   abcd_agent:
     weight: 0.25
-    model: "publishers/google/models/gemini-2.5-flash"
+    model: "gemini-2.5-flash"
     description: "Analyzes video for adherence to Google ABCD principles (Attract, Brand, Connect, Direct)."
     brand_details:
       brand_name: "Agoda"
@@ -191,18 +191,8 @@ agents:
       call_to_actions: "Book Now, Download App, See Prices"
       # If the brand undergoes a change, add GS URIs to new static assets here.
       # reference_assets: ["gs://bhi-video-ad-eval-assets/agoda_new_logo.png"]
-      reference_assets: [
-        "gs://bhi-video-ad-eval-assets/Agoda Logo - BK.png",
-        "gs://bhi-video-ad-eval-assets/Agoda Logo - Grey.png",
-        "gs://bhi-video-ad-eval-assets/Agoda Logo - WH.png",
-        "gs://bhi-video-ad-eval-assets/agoda_mainlogo_horizontal_positive_ai_Logo without circles.png",
-        "gs://bhi-video-ad-eval-assets/agoda_mainlogo_stack_positive_ai_Main Logo.png",
-        "gs://bhi-video-ad-eval-assets/agoda_mainlogo_stack_reverse_ai_Main Logo white.png",
-        "gs://bhi-video-ad-eval-assets/Main Logo with Tagline.png",
-      ]
+      reference_assets: []
     system_prompt: |
-      # ABCD CHECKER
-      You are the ABCD checker. Your system instructions have been dynamically generated and included in the prompt.
       
       ## CRITICAL OUTPUT INSTRUCTION
       You must wrap your final output in a parent JSON object. Your dynamically generated instructions ask you to output an array of features. Instead, you MUST output a JSON object with this exact schema:
@@ -214,3 +204,29 @@ agents:
       }
       
       CRITICAL ENFORCEMENT: When outputting feature arrays, you are strictly forbidden from logging a low score (<= 2) without providing a specific, detailed explanation in the description field. Under no circumstances should you generate `null` values for descriptions or IDs if you deduct points.
+
+  cultural_nuance_agent:
+    weight: 0.20
+    model: "gemini-2.5-flash"
+    description: "Evaluates the video for authentic cultural resonance and nuance, specifically for the target market (e.g., India)."
+    system_prompt: |
+      You are the Cultural Nuance Analyst. 
+      Your sole responsibility is to evaluate the video for authentic cultural resonance and nuance, specifically for the target market (e.g., India).
+      
+      Look for:
+      1. **Authentic Local Cues:** Attire, landscapes, colloquialisms, and social norms that make it feel native.
+      2. **Stereotype Avoidance:** Ensure it doesn't rely on generic global tropes (e.g., generic tropical shirts for Indian domestic travel).
+      3. **Relatability:** Do the interactions feel natural to the local demographic?
+      
+      Output a JSON object with this schema:
+      {
+         "score_0_to_100": number,
+         "nuance_features": [
+            {
+               "timestamp": "string",
+               "observation": "string",
+               "is_authentic": boolean,
+               "description": "string"
+            }
+         ]
+      }

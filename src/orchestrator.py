@@ -1,5 +1,6 @@
 import yaml
 import json
+import time
 import concurrent.futures
 from google import genai
 from google.genai import types
@@ -15,14 +16,17 @@ from src.abcds.long_form_abcd_features import get_long_form_abcd_feature_configs
 from src.abcds.shorts_features import get_shorts_feature_configs
 
 class VideoAdEvaluator:
-    def __init__(self, config_path: str = "config/agents.yaml"):
+    def __init__(self, config_path: str = "config/agents.yaml", api_key: str = None):
+        self.api_key = api_key
         # Load the configuration containing all prompts and model info
         with open(config_path, 'r') as f:
             self.config = yaml.safe_load(f)
         
-        # Initialize the Gemini client using Vertex AI
-        # self.client = genai.Client(vertexai=True, project="bhi-video-ad-eval", location="us-central1")
-        self.client = genai.Client(vertexai=True, project="bhi-video-ad-eval", location="global")
+        # Initialize the standard GenAI Client
+        if self.api_key:
+             self.client = genai.Client(api_key=self.api_key)
+        else:
+             self.client = genai.Client()
         self.model_id = self.config.get('modelId', 'gemini-2.5-flash')
         
     @retry(wait=wait_exponential(multiplier=2, min=10, max=120), stop=stop_after_attempt(7), retry=retry_if_exception(_is_retryable_error))
@@ -41,11 +45,11 @@ class VideoAdEvaluator:
             config=config,
         )
         
-    def _run_context_agent(self, user_request: str) -> dict:
+    def _run_context_agent(self, user_request: str, model_overrides: dict = None) -> dict:
         print("Retrieving evaluation context...")
         context_config = self.config.get('evaluation_context_agent', {})
         prompt = context_config.get('system_prompt', '')
-        model_id = context_config.get('model', self.model_id)
+        model_id = (model_overrides or {}).get('evaluation_context_agent') or context_config.get('model', self.model_id)
 
         input_text = f"{prompt}\n\nUser Request: {user_request}"
         
@@ -63,7 +67,7 @@ class VideoAdEvaluator:
              print("Error: Context agent did not generate valid JSON.")
              return {"error": "Invalid JSON rubric", "raw_response": response.text}
         
-    def _run_agent(self, video_uri: str, agent_name: str, agent_config: dict, rubric: dict) -> dict:
+    def _run_agent(self, video_uri: str, agent_name: str, agent_config: dict, rubric: dict, model_overrides: dict = None) -> dict:
         print(f"Running agent: {agent_name}...")
         
         # In a real environment, you'd want to handle video uploading or 
@@ -74,7 +78,7 @@ class VideoAdEvaluator:
         )
         
         prompt = agent_config.get('system_prompt', '')
-        agent_model_id = agent_config.get('model', self.model_id)
+        agent_model_id = (model_overrides or {}).get(agent_name) or agent_config.get('model', self.model_id)
         
         # Look for reference image assets
         image_parts = []
@@ -232,18 +236,33 @@ You MUST output a valid JSON object containing the exact same keys as the input,
             print(f"Error during deduplication: {e}")
             return results
 
-    def evaluate(self, video_uri: str, user_request: str = "Please evaluate this video ad.") -> dict:
-        # 1. Get rubric from EvaluationContextAgent
-        rubric = self._run_context_agent(user_request)
+    def evaluate(self, video_uri: str, user_request: str = "Please evaluate this video ad.", model_overrides: dict = None) -> dict:
+        # 1. Upload local file to Gemini File API
+        print(f"Uploading {video_uri} to Gemini File API...")
+        remote_file = self.client.files.upload(file=video_uri)
+        
+        while remote_file.state == "PROCESSING":
+            print("File is still processing in File API...")
+            time.sleep(2)
+            remote_file = self.client.files.get(name=remote_file.name)
+            
+        if remote_file.state == "FAILED":
+            raise Exception("File upload failed via Gemini File API")
+            
+        print(f"File uploaded successfully! URI: {remote_file.uri}")
+        use_uri = remote_file.uri
+
+        # 2. Get rubric from EvaluationContextAgent
+        rubric = self._run_context_agent(user_request, model_overrides)
         print("Obtained Context Rubric.")
         
         results = {}
         
-        # 2. Fan out to all specialized sub-agents in parallel
+        # 3. Fan out to all specialized sub-agents in parallel
         agents_config = self.config.get('agents', {})
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
             future_to_agent = {
-                executor.submit(self._run_agent, video_uri, agent_name, agent_config, rubric): agent_name
+                executor.submit(self._run_agent, use_uri, agent_name, agent_config, rubric, model_overrides): agent_name
                 for agent_name, agent_config in agents_config.items()
             }
             
@@ -271,7 +290,7 @@ You MUST output a valid JSON object containing the exact same keys as the input,
         
         print("\n--- Synthesis Starting ---")
         final_response_stream = self._generate_content_stream_with_retry(
-            model=self.model_id,
+            model=(model_overrides or {}).get('orchestrator') or self.model_id,
             contents=synthesis_input,
         )
         
@@ -283,6 +302,14 @@ You MUST output a valid JSON object containing the exact same keys as the input,
         print("\n--- Synthesis Complete ---")
         
         dedup_log = deduplicated_results.pop("deduplications_log", [])
+        
+        # 6. Cleanup File API file after evaluation (only if no agents failed, per user directive)
+        any_failed = any("error" in res for res in results.values() if isinstance(res, dict))
+        if any_failed:
+             print("Skipping File API cleanup because some agents failed. Keeping file for debugging.")
+        else:
+             print(f"Cleaning up File API file {remote_file.name}...")
+             self.client.files.delete(name=remote_file.name)
         
         return {
             "individual_checks": deduplicated_results,
